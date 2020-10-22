@@ -10,3 +10,5 @@ class StockViewset(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
+
+    serializer_class = StockSerializer
