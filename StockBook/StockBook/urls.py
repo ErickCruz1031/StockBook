@@ -18,7 +18,6 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 urlpatterns = [
     path('', include('book.urls')),
-    #path('book/', include('book.urls')),
     #path('admin/', admin.site.urls),
-    #path('', TemplateView.as_view(template_name='index.html'))
+    path('book/', TemplateView.as_view(template_name='index.html'))
 ]
