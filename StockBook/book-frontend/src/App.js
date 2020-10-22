@@ -5,11 +5,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-        <div className="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <input type="text" placeholder="Search.."/>
+        <div className="page">
+          <div className="home-sec"> 
+            <div className="home-container"> 
+              <div id = "home">Home</div>
+            </div>
+          </div>
+          <div id = "searchbox"> 
+            <input id = "searchInput" type="text" placeholder="Stock Ticker.."/>
+          </div>
         </div> 
     </div>
   );
@@ -17,5 +21,6 @@ function App() {
 
 
 //The thing that lets you select from a dropdpwn is <select>, and each line in it is <option> 
-
+//For the API use polygon.io
+//<a id = "home" href="#home">Home</a>
 export default App;
