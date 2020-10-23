@@ -11,8 +11,13 @@ function App() {
               <div id = "home">Home</div>
             </div>
           </div>
-          <div id = "searchbox"> 
-            <input id = "searchInput" type="text" placeholder="Stock Ticker.."/>
+          <div id = "searchbox">
+            <div id="inputWrapper"> 
+              <input id = "searchInput" type="text" placeholder="Stock Ticker.."/>
+            </div>
+            <div id="buttonWrapper">
+              <button type="button"> Search </button>
+            </div> 
           </div>
         </div> 
     </div>
