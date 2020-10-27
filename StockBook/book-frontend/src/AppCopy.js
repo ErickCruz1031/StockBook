@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Div, Icon } from "react-atomize";
+import { Button } from "atomize";
 
 
 class App extends Component{
@@ -10,41 +10,6 @@ class App extends Component{
     showBookPage : false
   }
 
-  render () {
-
-      return (
-
-
-        <Div className="App" w = "100%" h ="100%">
-          <Div className = "Top-Page" bg="brand700" d="flex" align="center "p="1rem" w="100%" h="8%" > 
-              <Button
-              bg="warning700"
-              hoverBg="warning600"
-              rounded="circle"
-              shadow="2"
-              hoverShadow="4">
-              <Icon name="HomeSolid" color="white" />
-            </Button>
-
-          </Div>
-
-          <Div className="Bottom-Page" w="100%" h="92%">
-
-            This is the remainder of the page 
-          </Div>
-        </Div>
-
-
-        
-
-      );
-
-  }
-
-
-
-
-/*
   render () {
     return (
       <div className="App">
@@ -67,7 +32,7 @@ class App extends Component{
     );
   }
 
-*/
+
 
 }
 
