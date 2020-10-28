@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Div, Icon } from "react-atomize";
+import { Button, Div, Icon, Input} from "react-atomize";
 
 
 class App extends Component{
@@ -30,7 +30,38 @@ class App extends Component{
 
           <Div className="Bottom-Page" w="100%" h="92%">
 
-            This is the remainder of the page 
+            <Div className="searchBar" w="100%" h="8%"  d="flex"> 
+              <Div className="InputWrapper" w="50%" p={{l:"25%", t:"2%"}}>
+                <Input w="100%" placeholder="Stock Ticker"/>
+              </Div>
+
+              <Div className="buttonWrapper" w="50%" p={{l:"5%", t:"2%"}}>
+                <Button
+                  bg="warning700"
+                  hoverBg="warning600"
+                  rounded="circle"
+                  shadow="2"
+                  hoverShadow="4">
+                  <Icon name="Search" color="white" />
+                </Button>
+              </Div>
+            </Div>
+
+            <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
+
+              <Div className="Company-Page" w="100%" h="100%">
+                <Div className="First-Module" w="100%" h="100%" border="1px solid" borderColor="gray500" rounded="lg">
+                  <div> This is part of the code bro lets go </div>
+
+                </Div>
+
+              </Div>
+
+            
+
+            </Div>
+
+
           </Div>
         </Div>
 
