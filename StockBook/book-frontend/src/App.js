@@ -1,13 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button, Div, Icon, Input} from "react-atomize";
+import { Button, Div, Icon, Input, Image} from "react-atomize";
+import { StockSection } from "./newsComponent"
+
+/*
+class Stock_Section extends Component{
+  state={
+    url : "null"
+  }
+
+  componentDidMount(){
+    console.log("This component was mounted. Calling the API");
+    fetch('https://api.polygon.io/v1/meta/symbols/AAPL/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e')
+        .then(response => response.json())
+        .then(data => this.setState({ url: data[0].image }));
+
+  }
+  render() {
+
+    return (
+
+      <Div className="News-Section"> 
+      <Image src = {this.state.url} />
+      </Div>
+
+    );
+  }
+
+                  <Div>
+                    <Image src = {this.state.url} />
+                  </Div>
+                */
 
 
 class App extends Component{
   state = {
     showCompanyPage : false,
-    showBookPage : false
+    showBookPage : false,
+    url : "null"
+  }
+
+  componentDidMount(){
+    console.log("This component was mounted. Calling the API");
+    fetch('https://api.polygon.io/v1/meta/symbols/AAPL/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e')
+        .then(response => response.json())
+        .then(data => this.setState({ url: data[0].image }));
+
   }
 
   render () {
@@ -51,17 +89,10 @@ class App extends Component{
 
               <Div className="Company-Page" w="100%" h="100%">
                 <Div className="First-Module" w="100%" h="100%" border="1px solid" borderColor="gray500" rounded="lg">
-                  <div> This is part of the code bro lets go </div>
-
+                 <StockSection />
                 </Div>
-
               </Div>
-
-            
-
             </Div>
-
-
           </Div>
         </Div>
 
@@ -73,32 +104,6 @@ class App extends Component{
   }
 
 
-
-
-/*
-  render () {
-    return (
-      <div className="App">
-          <div className="page">
-            <div className="home-sec"> 
-              <div className="home-container"> 
-                <div id = "home">Home</div>
-              </div>
-            </div>
-            <div id = "searchbox">
-              <div id="inputWrapper"> 
-                <input id = "searchInput" type="text" placeholder="Stock Ticker.."/>
-              </div>
-              <div id="buttonWrapper">
-                <button type="button" onClick={activateSearch}> Search </button>
-              </div> 
-            </div>
-          </div> 
-      </div>
-    );
-  }
-
-*/
 
 }
 
@@ -112,6 +117,7 @@ async function activateSearch(){
   const baseURL = "https://api.polygon.io/v1/meta/symbols/" //Base URL for the call 
   const apiKey = "EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e"
   //"https://api.polygon.io/v1/meta/symbols/AAPL/company?apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e"
+  //https://api.polygon.io/v1/meta/symbols/AAPL/news?perpage=50&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e
 
   console.log("Clicked the search button")
   

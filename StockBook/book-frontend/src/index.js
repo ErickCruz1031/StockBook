@@ -5,7 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { StyleReset } from "atomize";
 
+
 ReactDOM.render(
+
+
+
+
+
   <React.StrictMode>
     <StyleReset />
     <App />
