@@ -1,37 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Button, Div, Icon, Input, Image} from "react-atomize";
-import { StockSection } from "./newsComponent"
-
-/*
-class Stock_Section extends Component{
-  state={
-    url : "null"
-  }
-
-  componentDidMount(){
-    console.log("This component was mounted. Calling the API");
-    fetch('https://api.polygon.io/v1/meta/symbols/AAPL/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e')
-        .then(response => response.json())
-        .then(data => this.setState({ url: data[0].image }));
-
-  }
-  render() {
-
-    return (
-
-      <Div className="News-Section"> 
-      <Image src = {this.state.url} />
-      </Div>
-
-    );
-  }
-
-                  <Div>
-                    <Image src = {this.state.url} />
-                  </Div>
-                */
-
+import { ItemSection } from "./newsComponent"
 
 class App extends Component{
   state = {
@@ -88,8 +58,8 @@ class App extends Component{
             <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
 
               <Div className="Company-Page" w="100%" h="100%">
-                <Div className="First-Module" w="100%" h="100%" border="1px solid" borderColor="gray500" rounded="lg">
-                 <StockSection />
+                <Div className="First-Module" w="100%" h="100%" border="1px solid" borderColor="gray500" rounded="lg" flexDir="column">
+                 <ItemSection />
                 </Div>
               </Div>
             </Div>
