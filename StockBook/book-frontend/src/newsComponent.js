@@ -10,7 +10,7 @@ export class ItemSection extends Component{
       return (
         
         <Div className="board" d="flex" flexDir="column" w="100%" h="100%">
-             <NewsItem />
+             <NewsItem stock="AAPL"/>
         </Div>
         
   

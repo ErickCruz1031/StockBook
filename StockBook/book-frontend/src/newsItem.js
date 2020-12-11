@@ -6,20 +6,33 @@ export class NewsItem extends Component{
     
     state={
         url : "null",
-        headline : "null" 
+        headline : "null", 
+        ticker : "null"
       }
+      
     
       componentDidMount(){
         console.log("This component was mounted. Calling the API");
-        fetch('https://api.polygon.io/v1/meta/symbols/AAPL/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e')
+        var newsURL = 'https://api.polygon.io/v1/meta/symbols/' + this.state.ticker + '/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e'
+        var logoURL = 'https://api.polygon.io/v1/meta/symbols/' + this.state.ticker + '/news?perpage=5&page=1&apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e'
+        fetch(newsURL)
             .then(response => response.json())
             .then(data => this.setState({ headline: data[0].title}));
 
-        fetch('https://api.polygon.io/v1/meta/symbols/AAPL/company?apiKey=EwdgXn2W7ptj4vkx9B40T3HiVEvV4v3e')
+        fetch(logoURL)
         .then(response => response.json())
         .then(data => this.setState({ url: data.logo}));
     
       }
+
+      constructor(props){  
+        super(props);  
+        this.state = {  
+            url : "null",
+            headline : "null", 
+            ticker : props.stock 
+          }  
+      }  
 
 
 
