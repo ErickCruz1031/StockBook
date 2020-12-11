@@ -11,6 +11,10 @@ export class ItemSection extends Component{
         
         <Div className="board" d="flex" flexDir="column" w="100%" h="100%">
              <NewsItem stock="AAPL"/>
+             <NewsItem stock="TSLA"/>
+             <NewsItem stock="PYPL"/>
+             <NewsItem stock="SNAP"/>
+             <NewsItem stock="MSFT"/>
         </Div>
         
   
