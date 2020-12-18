@@ -8,7 +8,8 @@ class App extends Component{
   state = {
     showCompanyPage : false,
     showBookPage : false,
-    url : "null"
+    url : "null",
+    showing: true
   }
 
   componentDidMount(){
@@ -50,21 +51,29 @@ class App extends Component{
                   hoverBg="warning600"
                   rounded="circle"
                   shadow="2"
-                  hoverShadow="4">
+                  hoverShadow="4"
+                  onClick={() => this.setState({showing: !this.state.showing })}>
                   <Icon name="Search" color="white" />
-                </Button>
+                </Button> 
+                
               </Div>
             </Div>
 
-            <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
 
-              <Div className="Company-Page" w="100%" h="100%">
-                <Div className="First-Module" w="100%" h="100%" flexDir="column">
-                  <ItemSection />
+            { this.state.showing 
+              ? <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
 
+                  <Div className="Company-Page" w="100%" h="100%">
+                    <Div className="First-Module" w="100%" h="100%" flexDir="column">
+                      <ItemSection />
+
+                    </Div>
+                  </Div>
                 </Div>
-              </Div>
-            </Div>
+
+              : null 
+
+            }
           </Div>
         </Div>
 
@@ -81,7 +90,8 @@ class App extends Component{
 
 
 
-
+//https://stackoverflow.com/questions/41819342/how-to-hide-and-show-a-div-in-react
+//How to hide the react with an onclick function
 
 
 

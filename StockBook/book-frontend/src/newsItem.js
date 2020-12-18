@@ -12,12 +12,6 @@ export class NewsItem extends Component{
         fetch(newsURL)
             .then(response => response.json())
             .then(data => this.setState({ headline: data[0].title, summary: data[0].summary, url:data[0].image}));
-/*
-        fetch(logoURL)
-            .then(response => response.json())
-            .then(data => this.setState({ url: data.logo}));
-            */
-    
       }
 
       constructor(props){  
@@ -26,7 +20,7 @@ export class NewsItem extends Component{
             url : "null",  
             summary : "null",
             headline : "null", 
-            ticker : props.stock 
+            ticker : props.stock
           }  
       }  
 
@@ -38,6 +32,8 @@ export class NewsItem extends Component{
 
 
         //We're going to change the Logo to an actual logo from the atomize library <Icon name="Link" color="black" size="40%"/>
+        //Idea for the template of UI: 
+        //https://material-ui.com/getting-started/templates/checkout/
         <Div className="ElementOne" w="100%" h="20%" d="flex"> 
             <Div className="ElementTwo" w="10%" h="100%" align="center" border="1px solid" borderColor="gray600" rounded="xl" bg="gray400" hoverBg="gray900"> 
                 <FittedImage fit="contain" loader={<div> Loading </div>}  src={this.state.url} rounded="xl"/>
