@@ -3,6 +3,7 @@ import './App.css';
 import { Button, Div, Icon, Input, Image} from "react-atomize";
 import { ItemSection } from "./newsComponent"
 import { NewsItem } from "./newsItem"
+import { CompanyPage } from "./companyPage"
 
 class App extends Component{
   state = {
@@ -59,21 +60,25 @@ class App extends Component{
               </Div>
             </Div>
 
+             <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
+              { this.state.showing 
+                ? 
+                    <Div className="Company-Page" w="100%" h="100%">
+                      <Div className="First-Module" w="100%" h="100%" flexDir="column">
+                        <CompanyPage />
 
-            { this.state.showing 
-              ? <Div className="Dynamic-Page" w="100%" h="92%" d="flex" flexDir="column" p={{l:"2%", t:"2%", r:"2%",b:"2%"}} >
-
-                  <Div className="Company-Page" w="100%" h="100%">
+                      </Div>
+                    </Div>
+                  
+                : <Div className="Company-Page" w="100%" h="100%">
                     <Div className="First-Module" w="100%" h="100%" flexDir="column">
                       <ItemSection />
 
                     </Div>
                   </Div>
-                </Div>
 
-              : null 
-
-            }
+              }
+            </Div>
           </Div>
         </Div>
 
