@@ -65,7 +65,7 @@ class App extends Component{
                 ? 
                     <Div className="Company-Page" w="100%" h="100%">
                       <Div className="First-Module" w="100%" h="100%" flexDir="column">
-                        <CompanyPage />
+                        <CompanyPage stock="TSLA"/>
 
                       </Div>
                     </Div>

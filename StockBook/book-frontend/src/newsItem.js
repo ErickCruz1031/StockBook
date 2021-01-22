@@ -24,14 +24,6 @@ export class NewsItem extends Component{
           }  
       }  
 
-      searchTicker(){
-
-
-
-        return;
-
-      }//Function to gather input from the input box and look up the information to fill the UI
-
 
 
     render() {

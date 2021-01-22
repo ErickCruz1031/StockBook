@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'book-frontend/build')],
 SECRET_KEY = 'ehlzw@%^4vo9*z^4@s5+sxo)xx62wz=fjkt0+-^l133kb6g!7e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'StockBook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'book-frontend/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'book-frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
